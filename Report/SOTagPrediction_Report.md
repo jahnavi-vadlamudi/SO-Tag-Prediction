@@ -51,3 +51,51 @@ Below is the distribution of tags
   * Majority of the most frequent tags are programming language.
   * C# is the top most frequent programming language.
   * Android, IOS, Linux and windows are among the top most frequent operating systems.
+
+## III. Methodology
+### Data Cleaning and Preprocessing
+
+In order to train our model, we had to transform the questions into the right format. We performed the following steps:
+  
+  * Sample 1M data points due to computation limitation.
+  * Separate out code-snippets from Body
+  * Removed Special characters from Question title and description (not in code)
+  * Removed stop words (Except 'C')
+  * Removed HTML Tags
+  * Convert all the characters into small letters
+  * Use SnowballStemmer to stem the word
+
+### Implementation
+
+#### Converting the Tags for MultiLabel problem
+
+For Example:
+ * x1 = {Java, Javascript}
+ * x2 = {C}
+ * x3 = {Java}
+ * Y = {C, Java, Javascript, C##}
+
+<table align = "center">
+<tr>
+<th>X</th><th>y1</th><th>y2</th><th>y3</th><th>y4</th>
+</tr>
+<tr>
+<td>x1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td>x2</td><td>1</td><td>0</td><td>0</td><td>0</td>
+</tr>
+<tr>
+<td>x3</td><td>0</td><td>1</td><td>0</td><td>0</td>
+</tr>
+</table>
+ 
+ Sample the number of tags instead of considering all of the tags due to the computation limit.
+ Below image shows 99.04 % of questions are covered with 5500 tags.
+<p align="center">
+<img src="Images/Tags-Percentage.PNG" width="700" height="200" />
+</p>
+
+#### Split the dataset into a training, testing
+
+In order to train our model and evaluate it, it’s important to split the data into training, validation and testing datasets. We will train the model on a training set, and tune the model using GridSearch Crossvalidation. Finally we will measure the ability of our model to generalize by testing our model on the testing dataset.
