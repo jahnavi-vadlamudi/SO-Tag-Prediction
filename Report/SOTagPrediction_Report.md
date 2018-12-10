@@ -99,3 +99,15 @@ For Example:
 #### Split the dataset into a training, testing
 
 In order to train our model and evaluate it, it’s important to split the data into training, validation and testing datasets. We will train the model on a training set, and tune the model using GridSearch Crossvalidation. Finally we will measure the ability of our model to generalize by testing our model on the testing dataset.
+
+#### Featurization of data
+
+We will use TF-IDF vectorization to represent our words into vectors. 
+TF-IDF is an information retrieval technique that weighs a term's frequency(TF) and its inverse document frequency (IDF). Each word or term has its respective TF and IDF score. The product of the TF and IDF scores of a term is called the TF-IDF weight of that term.
+
+The TF-IDF algorithm is used to weigh a keyword in any content and assign the importance to that keyword based on the number of times it appears in the document. More importantly, it checks how relevant the keyword is throughout the web, which is referred to as corpus.
+
+For a term t in a document d, the weight Wt,d of term t in document d is given by:
+
+
+
