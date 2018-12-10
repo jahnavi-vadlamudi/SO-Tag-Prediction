@@ -31,7 +31,7 @@ The dataset contains 6,034,195 rows. The columns in the table are:
   * Body - The body of the question
   * Tags - The tags associated with the question in a space-seperated format (all lowercase, should not contain tabs '\t' or ampersands     '&')
 <p align="center">
-<img src="Images/Dataset.PNG" width="700" height="200" />
+<img src="Images/Dataset.PNG" width="800" height="250" />
 </p>
 
 Tags are predicted using Body of the question and Title which is an unstructured data. We can Identify the question using the Unique Id feature. 
@@ -39,6 +39,7 @@ As working with such a huge data set entails many computational limitations, so 
 There are 42048 number of unique tags. ".a, .app, .asp.net-mvc, .aspxauth, .bash-profile, .class-file, .cs-file, .doc, .drv, .ds-store" are some of the tags. By seeing the tags we can say the questions are all related to computer programming. 
 
 Below is the distribution of tags
+
 <p align="center">
 <img src="Images/Tags.PNG" width="700" height="200" />
 </p>
