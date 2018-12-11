@@ -109,5 +109,8 @@ The TF-IDF algorithm is used to weigh a keyword in any content and assign the im
 
 For a term t in a document d, the weight Wt,d of term t in document d is given by:
 
+<p align="center">
+<img src="Images/tfidf.PNG" width="700" height="200" />
+</p>
 
-
+#### Model Training
