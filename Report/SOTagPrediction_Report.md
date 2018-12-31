@@ -44,20 +44,23 @@ Below is the distribution of tags
 <img src="Images/Tags.PNG" width="700" height="200" />
 </p>
 
+ Word cloud of Frequent tags
 <p align="center">
-<img src="Images/Frequent_tags.PNG" width="700" height="200" />
+<img src="Images/tag.png" width="700" height="200" />
 </p>
 
   * Majority of the most frequent tags are programming language.
   * C# is the top most frequent programming language.
   * Android, IOS, Linux and windows are among the top most frequent operating systems.
+  
+ 
 
 ## III. Methodology
 ### Data Cleaning and Preprocessing
 
 In order to train our model, we had to transform the questions into the right format. We performed the following steps:
   
-  * Sample 1M data points due to computation limitation.
+  * Sample 0.5M data points due to computation limitation.
   * Separate out code-snippets from Body
   * Removed Special characters from Question title and description (not in code)
   * Removed stop words (Except 'C')
@@ -114,3 +117,27 @@ For a term t in a document d, the weight Wt,d of term t in document d is given b
 </p>
 
 #### Model Training
+The next step is to train our model. Logistic Regression is good idea to train our model because of its simplicity and fatser response But logistic regressions on their own are only binary classifiers, meaning they cannot handle target vectors with more than two classes.  In one-vs-rest logistic regression (OVR) a separate model is trained for each class predicted whether an observation is that class or not (thus making it a binary classification problem). 
+
+1. So we will use logistic Regresssion with One Vs Rest classifier from sklearn of penalty='l1' and C=0.1
+
+```python
+classfier_LR = OneVsRestClassifier(LogisticRegression(penalty='l1',C=0.1), n_jobs=-1)
+classfier_LR.fit(X_train_multilabel,y_train)
+```
+
+2. Next we will use Linear SVM with one-vs-rest classifier. Linear-SVM is nothing but SGDClassifier with loss as 'hinge'
+
+```python
+classifier_SVM = OneVsRestClassifier(SGDClassifier(loss='hinge', alpha=0.00001, penalty='l1'), n_jobs=-1)
+classifier_SVM.fit(X_train_multilabel, y_train)
+```
+
+
+3. To increase the performance we will perform hyperparameter tuning on alpha using gridsearchCV.
+```python
+classifier2_SVM = OneVsRestClassifier(SGDClassifier(loss='hinge',penalty='l1'))
+parameters = {'estimator__alpha':[0.001,0.01,0.1,10,100]}
+gridsearch_SVM = GridSearchCV(classifier2_SVM,param_grid = parameters, scoring='f1_micro',n_jobs = -1)
+gridsearch_SVM.fit(X_train_multilabel,y_train)
+```
