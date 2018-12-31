@@ -1,5 +1,5 @@
 
-# Stack Overflow Tag Prediction using Logistic Regression
+# Stack Overflow Tag Prediction
 
 ## I. Definition
 ### Project Overview
@@ -38,15 +38,15 @@ Tags are predicted using Body of the question and Title which is an unstructured
 As working with such a huge data set entails many computational limitations, so decided to use only a subset of the data.
 There are 42048 number of unique tags. ".a, .app, .asp.net-mvc, .aspxauth, .bash-profile, .class-file, .cs-file, .doc, .drv, .ds-store" are some of the tags. By seeing the tags we can say the questions are all related to computer programming. 
 
-Below is the distribution of tags
+<h5>Below is the distribution of tags</h5>
 
 <p align="center">
 <img src="Images/Tags.PNG" width="700" height="200" />
 </p>
 
- Word cloud of Frequent tags
+<h5>Word cloud of Frequent tags</h5>
 <p align="center">
-<img src="Images/tag.png" width="700" height="200" />
+<img src="Images/tag.png" width="650" height="350" />
 </p>
 
   * Majority of the most frequent tags are programming language.
@@ -113,7 +113,7 @@ The TF-IDF algorithm is used to weigh a keyword in any content and assign the im
 For a term t in a document d, the weight Wt,d of term t in document d is given by:
 
 <p align="center">
-<img src="Images/tfidf.PNG" width="700" height="200" />
+<img src="Images/tfidf.png" width="450" height="250" />
 </p>
 
 #### Model Training
