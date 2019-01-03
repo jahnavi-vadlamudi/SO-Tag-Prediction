@@ -141,3 +141,4 @@ parameters = {'estimator__alpha':[0.001,0.01,0.1,10,100]}
 gridsearch_SVM = GridSearchCV(classifier2_SVM,param_grid = parameters, scoring='f1_micro',n_jobs = -1)
 gridsearch_SVM.fit(X_train_multilabel,y_train)
 ```
+Implemented all the above three classifiers for both the featurization techniques BOW and TF-IDF.
