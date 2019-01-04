@@ -207,3 +207,42 @@ Micro F1-measure: 0.46 <br>
 Macro F1-measure: 0.27
 </p>
 
+<table align = "left">
+<tr>
+<th>Model</th><th>Featurization</th><th>F1-Micro</th>
+</tr>
+<tr>
+ <td><b>Logistic Regression</b></td><td><b>TF-IDF</b></td><td><b>0.5</b></td>
+</tr>
+<tr>
+<td>Logistic Regression</td><td>/BOW</td><td>0.49</td>
+</tr>
+<tr>
+<td>SGD with logloss</td><td>TF-IDF</td><td>0.47</td>
+</tr>
+<tr>
+<td>SGD with hingeloss</td><td>TF-IDF</td><td>0.46</td>
+</tr>
+<tr>
+<td>Linear SVM gridsearch</td><td>BOW</td><td>0.42</td>
+</tr>
+<tr>
+<td>SGD with hingeloss</td><td>BOW</td><td>0.41</td>
+</tr>
+</table>
+
+
+Of all the models logistic regreession with BOW and TF-IDF performed better than rest of the models with F1-Micro of 0.49 and 0.5 respectively.
+
+## V. Conclusion
+
+With this project we are able to predict the tags given the question title and body using Logistic Regression One Vs Rest Classifier with maximum f1-micro of 0.5
+As you might have noticied, we have taken simplest model like Logistic Regression & Linear SVM to train the model. Here is the two primary main reasons why the complex models were not tried
+
+* High dimentional data: since we are converting text to TfIdf or BOW vectors, the dimensions we get are very large in size. And when the dimensions are large, typically Random Forests & GBDT won’t work well.
+
+* Too many models to train: We have literally 600 models to train. And Logistic Regression is the simplest model one can use & it is comparitively faster. If we start using other models like RBF-SVM or RF, it will take too much time to train the model. For me it took more than 16 hours of time to train Linear SVM, that too after downscaling of data by large marginThe main advantage of using logistic Regression and SGD classifier is because of its simplicity and is computationally fatser.
+
+### Future Enhancements
+<b>Featurizing Text Data with Word2Vec: </b> When you try Word2Vec, the dimentionality of data reduces & hence complex models like Random Forests or GBDT might work well.
+
