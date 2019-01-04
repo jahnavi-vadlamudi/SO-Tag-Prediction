@@ -159,8 +159,38 @@ The F1 metric weights recall and precision equally, and a good retrieval algorit
 Mean F1-score is actually a micro-averaged F1-score.
 Given positive/negative rates for each class k, the resulting score is computed in the following way.
 
+Micro Precision and recall
 <p align="center">
 <img src="Images/PandR.PNG" width="250" height="150" />
 </p>
 
+Micro F1-score is the harmonic mean of Micro Precision and Micro recall.
+
+```math
+F1 = 2 * precision_micro*recall_micro / (precision_micro + recall_micro)
+```
+F1-Score of the different models trained above.
+<p align="left">
+<img src="Images/Log_Reg_BOW.png" width="400" height="260"/>
+</p>
+
+<p align="left">
+<img src="Images/SVM-hinge.PNG" width="400" height="260" />
+</p>
+
+<p align="left">
+<img src="Images/Linear_grid_BOW.PNG" width="400" height="260" />
+</p>
+
+<p align="left">
+<img src="Images/LogReg_tfidf.PNG.PNG" width="400" height="260" />
+</p>
+
+<p align="left">
+<img src="Images/SGD_log.PNG" width="400" height="260" />
+</p>
+
+<p align="left">
+<img src="Images/SGD_hinge.PNG" width="400" height="260" />
+</p>
 
