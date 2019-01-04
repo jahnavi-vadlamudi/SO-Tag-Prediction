@@ -160,7 +160,7 @@ Mean F1-score is actually a micro-averaged F1-score.
 Given positive/negative rates for each class k, the resulting score is computed in the following way.
 
 <p align="center">
-<img src="Images/PandR.png" width="450" height="250" />
+<img src="Images/PandR.PNG" width="250" height="150" />
 </p>
 
 
