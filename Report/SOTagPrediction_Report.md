@@ -170,26 +170,36 @@ Micro F1-score is the harmonic mean of Micro Precision and Micro recall.
 F1 = 2 * precision_micro*recall_micro / (precision_micro + recall_micro)
 ```
 F1-Score of the different models trained above.
+
+##### Logistic Regression with OneVsRest Classifier for BOW Featurization
+
+Micro F1-measure: 0.49
+Macro F1-measure: 0.36
+
 <p align="left">
 <img src="Images/LogReg_BOW.PNG" width="400" height="260"/>
 </p>
 
+##### SGD- Classifer with hinge loss (Linear SVM) 
 <p align="left">
 <img src="Images/SVM-hinge.PNG" width="400" height="260" />
 </p>
 
+##### LinearSVM using GridSearchCV
 <p align="left">
 <img src="Images/Linear_grid_BOW.PNG" width="450" height="260" />
 </p>
-
+##### Logistic Regression with One Vs Rest Classifier for TF-IDF classifier
 <p align="left">
 <img src="Images/LogReg_tfidf.PNG" width="400" height="260" />
 </p>
 
+##### SGD Classifier with log loss
 <p align="left">
 <img src="Images/SGD_log.PNG" width="400" height="260" />
 </p>
 
+##### SGD Classifier with hinge loss
 <p align="left">
 <img src="Images/SGD_hinge.PNG" width="450" height="260" />
 </p>
