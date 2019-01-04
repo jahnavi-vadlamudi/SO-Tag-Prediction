@@ -171,34 +171,39 @@ F1 = 2 * precision_micro*recall_micro / (precision_micro + recall_micro)
 ```
 F1-Score of the different models trained above.
 
-##### Logistic Regression with OneVsRest Classifier for BOW Featurization
+#### Logistic Regression with OneVsRest Classifier for BOW Featurization
 <p>
-Micro F1-measure: 0.49
+Micro F1-measure: 0.49 <br>
 Macro F1-measure: 0.36
 </p>
-##### SGD- Classifer with hinge loss (Linear SVM) 
+
+#### SGD- Classifer with hinge loss (Linear SVM) 
 <p>
-Micro F1-measure: 0.41
+Micro F1-measure: 0.41 <br>
 Macro F1-measure: 0.32
 </p>
-##### LinearSVM using GridSearchCV
+
+#### LinearSVM using GridSearchCV
 <p>
-Micro F1-measure: 0.42
+Micro F1-measure: 0.42 <br>
 Macro F1-measure: 0.26
 </p>
-##### Logistic Regression with One Vs Rest Classifier for TF-IDF classifier
+
+#### Logistic Regression with One Vs Rest Classifier for TF-IDF classifier
 <p>
-Micro F1-measure: 0.50
+Micro F1-measure: 0.50 <br>
 Macro F1-measure: 0.38
 </p>
-##### SGD Classifier with log loss
+
+#### SGD Classifier with log loss
 <p>
-Micro F1-measure: 0.47
+Micro F1-measure: 0.47 <br>
 Macro F1-measure: 0.34
 </p>
-##### SGD Classifier with hinge loss
+
+#### SGD Classifier with hinge loss
 <p>
-Micro F1-measure: 0.46
+Micro F1-measure: 0.46 <br>
 Macro F1-measure: 0.27
 </p>
 
