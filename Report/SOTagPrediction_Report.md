@@ -10,6 +10,11 @@ Stack Overflow is something which every programmer use one way or another. Each 
 ### Problem Statement
 Suggest the tags based on the content that was present in the question posted on Stackoverflow.
 
+### Problem Type
+It is a multi-label classification problem
+
+Multi-label Classification: Multilabel classification assigns to each sample a set of target labels. This can be thought as predicting properties of a data-point that are not mutually exclusive, such as topics that are relevant for a document. A question on Stackoverflow might be about any of C, Pointers, FileIO and/or memory-management at the same time or none of these.
+
 ### Metrics
 In order to evaluate the model, we will use the micro F1 score to test accuracy.
 Micro-Averaged F1-Score (Mean F Score) : The F1 score can be interpreted as a weighted average of the precision and recall, where an F1 score reaches its best value at 1 and worst score at 0. The relative contribution of precision and recall to the F1 score are equal. The formula for the F1 score is:
@@ -70,7 +75,7 @@ In order to train our model, we had to transform the questions into the right fo
 
 ### Implementation
 
-#### Converting the Tags for MultiLabel problem
+#### Converted the Tags for MultiLabel problem
 
 For Example:
  * x1 = {Java, Javascript}
@@ -169,65 +174,29 @@ Micro F1-score is the harmonic mean of Micro Precision and Micro recall.
 ```math
 F1 = 2 * precision_micro*recall_micro / (precision_micro + recall_micro)
 ```
-F1-Score of the different models trained above.
+##### F1-Score of the different models trained above.
 
-#### Logistic Regression with OneVsRest Classifier for BOW Featurization
-<p>
-Micro F1-measure: 0.49 <br>
-Macro F1-measure: 0.36
-</p>
-
-#### SGD- Classifer with hinge loss (Linear SVM) 
-<p>
-Micro F1-measure: 0.41 <br>
-Macro F1-measure: 0.32
-</p>
-
-#### LinearSVM using GridSearchCV
-<p>
-Micro F1-measure: 0.42 <br>
-Macro F1-measure: 0.26
-</p>
-
-#### Logistic Regression with One Vs Rest Classifier for TF-IDF classifier
-<p>
-Micro F1-measure: 0.50 <br>
-Macro F1-measure: 0.38
-</p>
-
-#### SGD Classifier with log loss
-<p>
-Micro F1-measure: 0.47 <br>
-Macro F1-measure: 0.34
-</p>
-
-#### SGD Classifier with hinge loss
-<p>
-Micro F1-measure: 0.46 <br>
-Macro F1-measure: 0.27
-</p>
-
-<table align = "left">
+<table>
 <tr>
-<th>Model</th><th>Featurization</th><th>F1-Micro</th>
+ <th>Model</th><th>Featurization</th><th>F1-Micro</th><th>F1-Macro</th>
 </tr>
 <tr>
- <td><b>Logistic Regression</b></td><td><b>TF-IDF</b></td><td><b>0.5</b></td>
+ <td><b>Logistic Regression</b></td><td><b>TF-IDF</b></td><td><b>0.5</b></td><td><b>0.38</b></td>
 </tr>
 <tr>
-<td>Logistic Regression</td><td>/BOW</td><td>0.49</td>
+<td>Logistic Regression</td><td>/BOW</td><td>0.49</td><td>0.36</td>
 </tr>
 <tr>
-<td>SGD with logloss</td><td>TF-IDF</td><td>0.47</td>
+<td>SGD with logloss</td><td>TF-IDF</td><td>0.47</td><td>0.34</td>
 </tr>
 <tr>
-<td>SGD with hingeloss</td><td>TF-IDF</td><td>0.46</td>
+<td>SGD with hingeloss</td><td>TF-IDF</td><td>0.46</td><td>0.27</td>
 </tr>
 <tr>
-<td>Linear SVM gridsearch</td><td>BOW</td><td>0.42</td>
+<td>Linear SVM gridsearch</td><td>BOW</td><td>0.42</td><td>0.26</td>
 </tr>
 <tr>
-<td>SGD with hingeloss</td><td>BOW</td><td>0.41</td>
+<td>SGD with hingeloss</td><td>BOW</td><td>0.41</td><td>0.32</td>
 </tr>
 </table>
 
