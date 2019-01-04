@@ -117,7 +117,7 @@ For a term t in a document d, the weight Wt,d of term t in document d is given b
 </p>
 
 #### Model Training
-The next step is to train our model. Logistic Regression is good idea to train our model because of its simplicity and fatser response But logistic regressions on their own are only binary classifiers, meaning they cannot handle target vectors with more than two classes.  In one-vs-rest logistic regression (OVR) a separate model is trained for each class predicted whether an observation is that class or not (thus making it a binary classification problem). 
+The next step is to train our model. Logistic Regression is good idea to train our model because of its simplicity and is computationally fatser. But logistic regressions on their own are only binary classifiers, meaning they cannot handle target vectors with more than two classes.  In one-vs-rest logistic regression (OVR) a separate model is trained for each class predicted whether an observation is that class or not (thus making it a binary classification problem). 
 
 1. So we will use logistic Regresssion with One Vs Rest classifier from sklearn of penalty='l1' and C=0.1
 
@@ -142,3 +142,25 @@ gridsearch_SVM = GridSearchCV(classifier2_SVM,param_grid = parameters, scoring='
 gridsearch_SVM.fit(X_train_multilabel,y_train)
 ```
 Implemented all the above three classifiers for both the featurization techniques BOW and TF-IDF.
+
+## IV. Results
+### Model Evaluation and Validation
+The best way to see if our model is able to generalize is to test our model on the untouched testing set. In order to measure the performance of the multilabel classifier, we use  Mean F1-Score. 
+
+<h5>F1-Score</h5>
+The F1 score, commonly used in information retrieval, measures accuracy using the statistics precision p and recall r. Precision is the ratio of true positives (tp) to all predicted positives (tp + fp). Recall is the ratio of true positives to all actual positives (tp + fn). The F1 score is given by:
+
+```math
+F1 = 2 * precision*recall / (precision + recall)
+```
+The F1 metric weights recall and precision equally, and a good retrieval algorithm will maximize both precision and recall simultaneously. 
+
+<h5> Mean F1-Score </h5>
+Mean F1-score is actually a micro-averaged F1-score.
+Given positive/negative rates for each class k, the resulting score is computed in the following way.
+
+<p align="center">
+<img src="Images/PandR.png" width="450" height="250" />
+</p>
+
+
