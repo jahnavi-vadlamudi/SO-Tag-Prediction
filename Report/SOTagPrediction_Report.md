@@ -171,7 +171,7 @@ F1 = 2 * precision_micro*recall_micro / (precision_micro + recall_micro)
 ```
 F1-Score of the different models trained above.
 <p align="left">
-<img src="Images/LogReg_BOW.png" width="400" height="260"/>
+<img src="Images/LogReg_BOW.PNG" width="400" height="260"/>
 </p>
 
 <p align="left">
@@ -179,7 +179,7 @@ F1-Score of the different models trained above.
 </p>
 
 <p align="left">
-<img src="Images/Linear_grid_BOW.PNG" width="400" height="260" />
+<img src="Images/Linear_grid_BOW.PNG" width="450" height="260" />
 </p>
 
 <p align="left">
@@ -191,6 +191,6 @@ F1-Score of the different models trained above.
 </p>
 
 <p align="left">
-<img src="Images/SGD_hinge.PNG" width="400" height="260" />
+<img src="Images/SGD_hinge.PNG" width="450" height="260" />
 </p>
 
